@@ -9,6 +9,9 @@ What was implemented:
 - Logs incoming request method and URL
 - Logs response status after request completion
 
+Execution Timing
+- Middleware runs early in the request lifecycle, processing each incoming request before other components like Guards or Pipes.
+
 Key Observations:
 - Middleware runs before routing and controllers
 - Route metadata is not available inside middleware

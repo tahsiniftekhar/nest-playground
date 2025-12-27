@@ -10,6 +10,9 @@ Key Learnings:
 - Guards have access to execution context and metadata
 - Role-based authorization is implemented using custom decorators
 
+Execution Timing
+- Guards are executed **before the route handler** but after Middleware. They act as gatekeepers, blocking unauthorized requests from reaching the handler.
+
 Why guards matter:
 - Authentication and authorization are centralized
 - Controllers remain clean
