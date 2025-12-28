@@ -7,6 +7,7 @@ import { InterceptorsModule } from './playground/interceptors/interceptors.modul
 import { MiddlewareModule } from './playground/middleware/middleware.module';
 import { PipesModule } from './playground/pipes/pipes.module';
 import { ExceptionFiltersModule } from './playground/exception-filters/exception-filters.module';
+import { AuthModule } from './playground/auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ExceptionFiltersModule } from './playground/exception-filters/exception
     GuardsModule,
     InterceptorsModule,
     ExceptionFiltersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
