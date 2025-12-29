@@ -14,3 +14,19 @@ Limitations:
 - No refresh token yet
 - No database-backed users
 - Token invalidation not handled
+
+## Auth Playground - Part 2 (Refresh Tokens)
+
+Purpose:
+- Implement secure token renewal using refresh tokens
+- Prevent token replay attacks using rotation
+
+Key Learnings:
+- Access tokens are short-lived and stateless
+- Refresh tokens are long-lived and stored server-side
+- Refresh tokens must be rotated on every use
+- Reusing an old refresh token invalidates the session
+
+Security Notes:
+- Different secrets for access and refresh tokens
+- Token rotation limits damage from token theft

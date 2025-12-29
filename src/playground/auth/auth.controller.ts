@@ -13,6 +13,16 @@ export class AuthController {
     return this.authService.login(user);
   }
 
+  @Post('refresh')
+  refresh(@Body() body: any) {
+    return this.authService.refresh(body.refreshToken);
+  }
+
+  @Post('logout')
+  logout(@Body() body: any) {
+    return this.authService.logout(body.userId);
+  }
+
   @UseGuards(JwtAuthGuard)
   @Get('profile')
   getProfile(@Req() req) {
