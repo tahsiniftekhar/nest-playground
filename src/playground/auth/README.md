@@ -30,3 +30,19 @@ Key Learnings:
 Security Notes:
 - Different secrets for access and refresh tokens
 - Token rotation limits damage from token theft
+
+## Rate Limiting
+
+Purpose:
+- Protect APIs from abuse and brute-force attacks
+- Ensure fair usage per client
+
+Implementation:
+- Redis-based sliding window counter
+- Limits enforced via NestJS Guard
+- Shared state across instances
+
+Key Learnings:
+- In-memory rate limiting does not scale
+- Redis enables distributed enforcement
+- Rate limiting is a security feature, not optimization

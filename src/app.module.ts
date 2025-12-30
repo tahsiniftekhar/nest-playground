@@ -8,9 +8,11 @@ import { MiddlewareModule } from './playground/middleware/middleware.module';
 import { PipesModule } from './playground/pipes/pipes.module';
 import { ExceptionFiltersModule } from './playground/exception-filters/exception-filters.module';
 import { AuthModule } from './playground/auth/auth.module';
+import { RedisModule } from './playground/infrastructure/redis.module';
 
 @Module({
   imports: [
+    RedisModule,
     HttpStatusModule,
     MiddlewareModule,
     PipesModule,
