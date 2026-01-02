@@ -9,6 +9,7 @@ import { PipesModule } from './playground/pipes/pipes.module';
 import { ExceptionFiltersModule } from './playground/exception-filters/exception-filters.module';
 import { AuthModule } from './playground/auth/auth.module';
 import { RedisModule } from './playground/infrastructure/redis.module';
+import { OrdersModule } from './playground/orders/orders.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { RedisModule } from './playground/infrastructure/redis.module';
     InterceptorsModule,
     ExceptionFiltersModule,
     AuthModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

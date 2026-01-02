@@ -10,9 +10,9 @@ import { RedisModule } from '../infrastructure/redis.module';
       secret: 'access-token-secret',
       signOptions: { expiresIn: '15m' },
     }),
-    RedisModule
+    RedisModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, ],
+  providers: [AuthService],
 })
 export class AuthModule {}
