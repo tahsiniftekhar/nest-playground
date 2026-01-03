@@ -46,3 +46,15 @@ Key Learnings:
 - In-memory rate limiting does not scale
 - Redis enables distributed enforcement
 - Rate limiting is a security feature, not optimization
+
+## Identity-aware Rate Limiting
+
+Strategies:
+- Public routes: IP-based
+- Authenticated routes: userId-based
+- Sensitive routes: IP + userId
+
+Why:
+- Prevent brute-force attacks
+- Prevent token abuse
+- Fair usage for authenticated users

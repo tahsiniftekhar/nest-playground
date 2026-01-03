@@ -25,7 +25,7 @@ export class AuthController {
     return this.authService.logout(body.userId);
   }
 
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard, RateLimitGuard)
   @Get('profile')
   getProfile(@Req() req) {
     return {
