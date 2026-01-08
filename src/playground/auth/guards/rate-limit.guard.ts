@@ -4,7 +4,6 @@ import {
   Inject,
   Injectable,
 } from '@nestjs/common';
-import { Request } from 'express';
 import Redis from 'ioredis';
 import { TooManyRequestsException } from '../../../common/exceptions/too-many-requests.exception';
 
@@ -13,7 +12,7 @@ export class RateLimitGuard implements CanActivate {
   constructor(@Inject('REDIS') private redis: Redis) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const request = context.switchToHttp().getRequest<Request>();
+    const request = context.switchToHttp().getRequest();
     const user = request.user as any;
 
     const keys: string[] = [];
