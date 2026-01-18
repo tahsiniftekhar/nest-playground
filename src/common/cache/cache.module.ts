@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { RedisModule } from '../../playground/infrastructure/redis.module';
+import { RedisModule } from '../../infrastructure/redis.module';
 import { CacheService } from './cache.service';
 
 @Module({
