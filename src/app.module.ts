@@ -10,6 +10,8 @@ import { InterceptorsModule } from './playground/interceptors/interceptors.modul
 import { MiddlewareModule } from './playground/middleware/middleware.module';
 import { OrdersModule } from './playground/orders/orders.module';
 import { PipesModule } from './playground/pipes/pipes.module';
+import { WalletModule } from './playground/wallet/wallet.module';
+import { PrismaModule } from '@/infrastructure/prisma/prisma.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { PipesModule } from './playground/pipes/pipes.module';
     ExceptionFiltersModule,
     AuthModule,
     OrdersModule,
+    WalletModule,
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

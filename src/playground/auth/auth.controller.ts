@@ -27,7 +27,7 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard, RateLimitGuard)
   @Get('profile')
-  getProfile(@Req() req) {
+  getProfile(@Req() req: any) {
     return {
       message: 'Protected profile',
       user: req.user,

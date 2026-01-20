@@ -18,7 +18,7 @@ export class IdempotencyInterceptor implements NestInterceptor {
     next: CallHandler,
   ): Promise<Observable<any>> {
     const request = context.switchToHttp().getRequest<Request>();
-    const key = request.headers['idempotency-key'] as string;
+    const key = request.headers.get('idempotency-key') as string;
 
     if (!key) {
       throw new BadRequestException('Idempotency-key missing');
