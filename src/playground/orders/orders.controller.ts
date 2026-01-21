@@ -1,4 +1,11 @@
-import { Controller, UseInterceptors, Post, Get, Param } from '@nestjs/common';
+import {
+  Controller,
+  UseInterceptors,
+  Post,
+  Get,
+  Param,
+  Body,
+} from '@nestjs/common';
 import { IdempotencyInterceptor } from '../../common/idempotency/idempotency.interceptor';
 import { OrdersService } from './orders.service';
 
@@ -15,5 +22,10 @@ export class OrdersController {
   @Get(':id')
   getOrder(@Param('id') id: string) {
     return this.ordersService.findOrder(id);
+  }
+
+  @Post('create')
+  createOrderTx(@Body() body: any) {
+    return this.ordersService.createOrder(body.productId, body.quantity);
   }
 }

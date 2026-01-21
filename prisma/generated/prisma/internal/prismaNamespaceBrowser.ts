@@ -75,7 +75,8 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const InventoryScalarFieldEnum = {
   id: 'id',
   productId: 'productId',
-  quantity: 'quantity'
+  stock: 'stock',
+  updatedAt: 'updatedAt'
 } as const
 
 export type InventoryScalarFieldEnum = (typeof InventoryScalarFieldEnum)[keyof typeof InventoryScalarFieldEnum]
@@ -84,7 +85,7 @@ export type InventoryScalarFieldEnum = (typeof InventoryScalarFieldEnum)[keyof t
 export const OrderScalarFieldEnum = {
   id: 'id',
   productId: 'productId',
-  status: 'status',
+  quantity: 'quantity',
   createdAt: 'createdAt'
 } as const
 
@@ -106,12 +107,4 @@ export const SortOrder = {
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
-
-
-export const QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-} as const
-
-export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
